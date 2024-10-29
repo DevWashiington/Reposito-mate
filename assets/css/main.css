@@ -817,16 +817,20 @@ section,
 
 .hero h1 {
   margin: 0px;
-  font-size: 44px;
-  font-weight: 600;
-  font-family: 'selna', sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 40px;
+  font-style: italic;
 }
 .hero p {
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   margin: 5px 0 30px 0;
-  font-size: 20px;
-  font-weight: 400;
-  font-family:'selna', sans-serif;
+  font-size: 15px;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .hero .btn-get-started {
@@ -839,13 +843,13 @@ section,
   padding: 10px 28px 12px 28px;
   border-radius: 50px;
   transition: 0.5s;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
 }
 
 .hero .btn-get-started:hover {
   color: var(--contrast-color);
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
 }
 
 .hero .btn-watch-video {
@@ -872,6 +876,54 @@ section,
   color: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
+.hero-img img{
+  width: 100%; /* Ajuste conforme necessário */ 
+  max-width: 900px; /* Limite máximo de largura */ 
+  height: auto; /* Mantém a proporção da imagem */
+}
+
+@media (max-width: 1024px) { 
+  
+  .hero-img img { 
+    display: none;
+  } 
+  .hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .hero .col-lg-5 { 
+    width: 100%; 
+  }
+  .hero {
+    width: 100%;
+    min-height: 60vh;
+    position: relative;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    height: 850px;
+    background: linear-gradient(rgb(242, 242, 242, 2), rgba(114, 191, 191, 0.7)), url(/Yummy/Yummy/assets/img/Thamires-jaleco.png);
+    background-size: cover;
+  }
+}
+
+  .hero p {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+
+  .hero .btn-get-started,
+  .hero .btn-watch-video {
+    font-size: 13px;
+  }
+
+@media (max-width: 768px) { 
+  .hero-img img { 
+    max-width: 0px; /* Ajuste a largura conforme necessário */ 
+  } 
+}
 
 @media (max-width: 640px) {
   .hero h1 {
