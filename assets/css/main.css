@@ -810,8 +810,8 @@ section,
   padding: 10px 0;
   display: flex;
   align-items: center;
-  height: 850px;
-  background: linear-gradient(rgb(242, 242, 242, 2), rgba(114, 191, 191, 0.7)), url(/assets/img/mujer-estetica-facial.jpg);
+  height: 900px;
+  background: linear-gradient(rgb(242, 242, 242, 2), rgba(114, 191, 191, 0.7)), url(/Yummy/Yummy/assets/img/events-4.jpg);
   background-size: cover;
 }
 
@@ -902,7 +902,7 @@ section,
     padding: 10px 0;
     display: flex;
     align-items: center;
-    height: 850px;
+    height: 900px;
     background: linear-gradient(rgb(242, 242, 242, 2), rgba(114, 191, 191, 0.7)), url(/Yummy/Yummy/assets/img/Thamires-jaleco.png);
     background-size: cover;
   }
@@ -921,7 +921,7 @@ section,
 
 @media (max-width: 768px) { 
   .hero-img img { 
-    max-width: 0px; /* Ajuste a largura conforme necessário */ 
+    display: none; 
   } 
 }
 
