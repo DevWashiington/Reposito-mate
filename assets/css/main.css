@@ -789,10 +789,12 @@ section,
   font-size: 48px;
   font-weight: 500;
   font-family: var(--heading-font);
+  font-family: "Selna", sans-serif;
 }
 
 .section-title p .description-title {
   color: var(--accent-color);
+  font-family: "Selna", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -800,7 +802,7 @@ section,
 --------------------------------------------------------------*/
 @font-face {
   font-family: 'selna';
-  src: url('/Yummy/Yummy/assets/img/FONT/selna-7440006/Selna\ Regular.ttf');
+  src: url(../css/Selna\ Regular.ttf);
 }
 
 .hero {
@@ -810,9 +812,10 @@ section,
   padding: 10px 0;
   display: flex;
   align-items: center;
-  height: 900px;
+  height: 200px;
   background: linear-gradient(rgb(242, 242, 242, 2), rgba(114, 191, 191, 0.7)), url(/Yummy/Yummy/assets/img/events-4.jpg);
   background-size: cover;
+  overflow: hidden;
 }
 
 .hero h1 {
@@ -820,17 +823,22 @@ section,
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
-  font-size: 40px;
+  font-size: 50px;
   font-style: italic;
 }
 .hero p {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
   margin: 5px 0 30px 0;
   font-size: 15px;
-  font-family: "Raleway", sans-serif;
+  font-family: "Selna", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 500;
+  font-weight: 700;
   font-style: normal;
+}
+
+.hero .col-lg-5 { 
+  flex: 1 0 auto; /* Ajusta a flexibilidade da coluna */ 
+  max-width: 100%; /* Permite que a coluna ocupe 100% da largura disponível */ 
 }
 
 .hero .btn-get-started {
@@ -877,9 +885,10 @@ section,
 }
 
 .hero-img img{
-  width: 100%; /* Ajuste conforme necessário */ 
-  max-width: 900px; /* Limite máximo de largura */ 
+  width: 100%px; /* Ajuste conforme necessário */ 
+  max-width: 650px; /* Limite máximo de largura */ 
   height: auto; /* Mantém a proporção da imagem */
+  object-fit: contain;
 }
 
 @media (max-width: 1024px) { 
@@ -962,23 +971,72 @@ section,
   margin-bottom: 20px;
 }
 
-.about .book-a-table {
-  text-align: center;
-  border: 2px solid color-mix(in srgb, var(--default-color2), transparent 20%);
-  padding: 22px;
-}
+@keyframes pulse { 
+  0% {
+     transform: scale(1); 
+     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+    } 
 
-.about .book-a-table h3 {
-  font-family: 'selna', sans-serif;
-  margin: 0 0 0 0;
-  font-size: 24px;
-}
+  50% { 
+    transform: scale(1.02); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+    } 
+    
+  100% { 
+      transform: scale(1); 
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+    } 
+  }
 
-.about .book-a-table a {
-  color: var(--accent-color);
-  font-weight: 300;
-  font-size: 28px;
-  margin: 0;
+.about { 
+  display: flex; /* Define o contêiner como Flexbox */ 
+  flex-direction: column; /* Organiza o conteúdo em uma coluna */ 
+  justify-content: center; /* Centraliza verticalmente */ 
+  align-items: center; /* Centraliza horizontalmente */ 
+  text-align: center; /* Centraliza o texto */
+  }
+
+.about .book-a-table { 
+  width: 500px;
+  max-width: 100%;
+  text-align: center; 
+  border: 2px solid #d9d9d9; /* Utilize a cor principal */ 
+  background-color: #f2f2f2; /* Cor de fundo */ 
+  padding: 5px; /* Ajuste de padding */ 
+  border-radius: 60px; /* Bordas arredondadas */ 
+  transition: all 0.3s ease; /* Transição suave */ 
+  cursor: pointer; /* Cursor de ponteiro */ 
+  display: inline-block; /* Mantém o CTA alinhado ao conteúdo */ 
+  animation: pulse 3s infinite; /* Animação pulsante */ 
+} 
+  
+.about .book-a-table:hover { 
+  background-color: #d9d9d9; /* Fundo branco ao hover */ 
+  color: var(--default-color2); /* Cor do texto ao hover */ 
+  border-color: #f2f2f2; /* Cor da borda ao hover */ 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra ao hover */ 
+} 
+  
+.about .book-a-table h3 { 
+  font-family: 'Selna', sans-serif; 
+  color: #72bfbf; /* Cor do texto */
+  font-size: 18px; /* Tamanho da fonte */ 
+  margin: 0; 
+  font-size: 24px; 
+} 
+
+.about .book-a-table a { 
+  color: var(--accent-color); 
+  font-weight: 300; 
+  font-size: 28px; 
+  color: #72bfbf; /* Cor do texto */
+  margin: 0; 
+  text-decoration: none; /* Remove sublinhado */ 
+  transition: color 0.3s ease; /* Transição de cor suave */ 
+} 
+
+.about .book-a-table a:hover { 
+  color: var(--default-color2); /* Cor do texto ao hover */
 }
 
 .about .fst-italic {
@@ -1013,6 +1071,25 @@ section,
   top: calc(50% - 47px);
 }
 
+.about-img {
+  width: 500px;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+
+.col-lg-7 { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.about-img-video{
+  border-radius: 20px;
+  width: 900px;
+  height: 300px;
+}
 /*--------------------------------------------------------------
 # Why Us Section
 --------------------------------------------------------------*/
@@ -1211,18 +1288,21 @@ section,
 }
 
 .menu .tab-content .tab-header h3 {
-  font-size: 48px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--accent-color);
+  font-family: "selna", sans-serif;
 }
 
 .menu .tab-content .menu-item {
-  text-align-last: center;
+  text-align: center;
 }
 
 .menu .tab-content .menu-item .menu-img {
   padding: 0 60px;
   margin-bottom: 15px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .menu .tab-content .menu-item h4 {
